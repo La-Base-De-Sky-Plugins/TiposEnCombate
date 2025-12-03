@@ -12,13 +12,13 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Zip Folder
-      run: zip -r "[LBDSKY] [Plugin] Mostrar tipos en combate.zip" . -i "Graphics/*" "Plugins/*"
+      run: zip -r "[LBDSKY][Plugin]Mostrar_tipos_en_combate.zip" . -i "Graphics/*" "Plugins/*"
 
     - name: Release
       uses: softprops/action-gh-release@v2
       if: startsWith(github.ref, 'refs/tags/')
       with:
-        files: "[LBDSKY] [Plugin] Mostrar tipos en combate.zip"
+        files: "[LBDSKY][Plugin]Mostrar_tipos_en_combate.zip"
         generate_release_notes: true
         make_latest: true
         token: ${{ secrets.RELEASE_TOKEN_PLUGINS }}
